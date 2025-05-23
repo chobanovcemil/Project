@@ -1,0 +1,52 @@
+{
+  "contact": [
+    {
+      "icon": "fa fa-phone",
+      "text": "+123-456-7890"
+    },
+    {
+      "icon": "fa fa-envelope",
+      "text": "hello@reallygreatsite.com"
+    },
+    {
+      "icon": "fa fa-map-marker",
+      "text": "123 Anywhere St., Any"
+    },
+    {
+      "icon": "fa fa-globe",
+      "text": "reallygreatsite.com"
+    }
+  ],
+  "education": [
+    {
+      "years": "2029-2030",
+      "university": "WARDIERE UNIVERSITY",
+      "degrees": [
+        "Master of Business Management"
+      ]
+    },
+    {
+      "years": "2025-2029",
+      "university": "WARDIERE UNIVERSITY",
+      "degrees": [
+        "Bachelor of Business",
+        "GPA: 3.8/4.0"
+      ]
+    }
+  ],
+  "skills": [
+    "Project Management",
+    "Public Relations",
+    "Teamwork",
+    "Time Management",
+    "Leadership",
+    "Effective Communication",
+    "Critical Thinking"
+  ],
+  "languages": [
+    "English (Fluent)",
+    "French (Fluent)",
+    "German (Basics)",
+    "Spanish (Intermediate)"
+  ]
+}
