@@ -1,3 +1,0 @@
-HTTPS: https://github.com/fetroid6491/Project.git
-Username: fetroid6491
-PAT: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
