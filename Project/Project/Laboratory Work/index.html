@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <!--Container Section-->
+    <div class="container">
+      <!--Left Side Of The Container-->
+      <div class="left_Side">
+        <!--Avatar Section-->
+        <div class="avatar">
+          <div class="frame">
+            <img src="./images/img.png" alt="" />
+          </div>
+        </div>
+        <!--Contact Section-->
+        <div class="contact-section" id="contact-section">
+          <div class="contact-section-header">
+            <h3 class="title1">CONTACT</h3>
+            <button
+              class="contact-collapse-toggle"
+              onclick="toggleContactSection()"
+            >
+              <span class="contact-toggle-icon">−</span>
+            </button>
+          </div>
+          <hr style="border: 1px solid #fff; width: 100%" />
+          <div class="contact-section-content" id="contact-section-content">
+            <ul id="contact-list">
+              <li>
+                <span class="icon-contact-section">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </span>
+                <span class="text-contact-section">+123-456-7890</span>
+              </li>
+              <li>
+                <span class="icon-contact-section">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+                <span class="text-contact-section"
+                  >hello@reallygreatsite.com</span
+                >
+              </li>
+              <li>
+                <span class="icon-contact-section">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </span>
+                <span class="text-contact-section">123 Anywhere St., Any</span>
+              </li>
+              <li>
+                <span class="icon-contact-section">
+                  <i class="fa fa-globe" aria-hidden="true"></i>
+                </span>
+                <span class="text-contact-section">reallygreatsite.com</span>
+              </li>
+            </ul>
+            <div id="button-container-contact">
+              <button id="edit-btn-contact-section">EDIT</button>
+            </div>
+            <div id="form-container-contact-section" style="display: none">
+              <input
+                id="icon-input-contact-section"
+                type="text"
+                placeholder="Enter icon class e.g. fa fa-phone"
+              />
+              <input
+                id="contact-input"
+                type="text"
+                placeholder="Enter contact info"
+              />
+              <div id="button-group-contact-section">
+                <button id="save-btn-contact-section">SAVE</button>
+                <button id="cancel-btn-contact-section">CANCEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Education Section-->
+        <div class="education-section" id="education-section">
+          <div class="section-header">
+            <h3 class="title1">EDUCATION</h3>
+            <button
+              class="collapse-toggle"
+              onclick="toggleSection('education-content')"
+            >
+              <span class="toggle-icon">−</span>
+            </button>
+          </div>
+          <hr style="border: 1px solid #fff; width: 100%" />
+          <div class="section-content" id="education-content">
+            <ul id="education-list">
+              <li class="education-item">
+                <div class="education-entry">
+                  <div class="h5-container">
+                    <h5>2029-2030</h5>
+                    <button
+                      class="remove-btn-education-section"
+                      style="display: none"
+                      onclick="removeEntry(this)"
+                    >
+                      REMOVE
+                    </button>
+                  </div>
+                  <h4>WARDIERE UNIVERSITY</h4>
+                  <ul>
+                    <li><h6>Master of Business Management</h6></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="education-item">
+                <div class="education-entry">
+                  <div class="h5-container">
+                    <h5>2025-2029</h5>
+                    <button
+                      class="remove-btn-education-section"
+                      style="display: none"
+                      onclick="removeEntry(this)"
+                    >
+                      REMOVE
+                    </button>
+                  </div>
+                  <h4>WARDIERE UNIVERSITY</h4>
+                  <ul>
+                    <li><h6>Bachelor of Business</h6></li>
+                    <li><h6>GPA: 3.8/4.0</h6></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="new-education-form" style="display: none">
+              <input
+                type="text"
+                id="new-years"
+                placeholder="Years (e.g. 2021-2025)"
+              />
+              <input type="text" id="new-university" placeholder="University" />
+              <div id="degrees-container">
+                <input
+                  type="text"
+                  class="degree-input"
+                  placeholder="Degree or Note"
+                />
+              </div>
+              <button class="add-degree-btn" onclick="addDegreeField()">
+                + Add Another Degree
+              </button>
+            </div>
+            <div class="edit-controls-education-section">
+              <button
+                id="editButton-education-section"
+                onclick="enterEditMode()"
+              >
+                EDIT
+              </button>
+              <button
+                id="saveButton-education-section"
+                onclick="saveNewEducation()"
+                style="display: none"
+              >
+                SAVE
+              </button>
+              <button
+                id="cancelButton-education-section"
+                onclick="cancelEdit()"
+                style="display: none"
+              >
+                CANCEL
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--Skills Section-->
+        <div class="skills-section" id="skills-section">
+          <div class="skills-section-header">
+            <h3 class="title1">SKILLS</h3>
+            <button
+              class="skills-collapse-toggle"
+              onclick="toggleSkillsSection()"
+            >
+              <span class="skills-toggle-icon">−</span>
+            </button>
+          </div>
+          <hr />
+          <div class="skills-section-content" id="skills-section-content">
+            <ul class="skills-list">
+              <li class="skill-item">
+                <h5>Project Management</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+              <li class="skill-item">
+                <h5>Public Relations</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+              <li class="skill-item">
+                <h5>Teamwork</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+              <li class="skill-item">
+                <h5>Time Management</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+              <li class="skill-item">
+                <h5>Leadership</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+              <li class="skill-item">
+                <h5>Effective Communication</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+              <li class="skill-item">
+                <h5>Critical Thinking</h5>
+                <button class="remove-btn-skills-section">REMOVE</button>
+              </li>
+            </ul>
+            <input
+              type="text"
+              class="new-skill-input"
+              placeholder="Enter new skill"
+            />
+            <div class="action-buttons-skills-section">
+              <button class="edit-btn-skills-section">EDIT</button>
+              <button class="save-btn-skills-section">SAVE</button>
+              <button class="cancel-btn-skills-section">CANCEL</button>
+            </div>
+          </div>
+        </div>
+        <!--Languages Section-->
+        <div class="languages-section" id="languages-section">
+          <div class="languages-section-header">
+            <h3 class="title1">LANGUAGES</h3>
+            <button
+              class="languages-collapse-toggle"
+              onclick="toggleLanguagesSection()"
+            >
+              <span class="languages-toggle-icon">−</span>
+            </button>
+          </div>
+          <hr />
+          <div class="languages-section-content" id="languages-section-content">
+            <ul class="languages-list">
+              <li class="language-item">
+                <h5>English (Fluent)</h5>
+                <button class="remove-btn-languages-section">REMOVE</button>
+              </li>
+              <li class="language-item">
+                <h5>French (Fluent)</h5>
+                <button class="remove-btn-languages-section">REMOVE</button>
+              </li>
+              <li class="language-item">
+                <h5>German (Basics)</h5>
+                <button class="remove-btn-languages-section">REMOVE</button>
+              </li>
+              <li class="language-item">
+                <h5>Spanish (Intermediate)</h5>
+                <button class="remove-btn-languages-section">REMOVE</button>
+              </li>
+            </ul>
+            <input
+              type="text"
+              class="new-language-input"
+              placeholder="Enter new language"
+            />
+            <div class="action-buttons-languages-section">
+              <button class="edit-btn-languages-section">EDIT</button>
+              <button class="save-btn-languages-section">SAVE</button>
+              <button class="cancel-btn-languages-section">CANCEL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Right Side Of The Container-->
+      <div class="right_Side">
+        <!--Name-Surname-Job Section-->
+        <div class="name-surname-job">
+          <h1>
+            <span class="first-name">Richard</span>
+            <span class="last-name">Sanchez</span>
+          </h1>
+          <h2>Marketing Manager</h2>
+          <hr style="border: 2.8px solid #003147; width: 11%; margin: 0" />
+        </div>
+        <!--Form Section-->
+        <h1>Information Form</h1>
+        <form id="myForm-form-section">
+          <div class="form-group-form-section">
+            <label for="name-form-section" class="label-form-section"
+              >Surname Name:</label
+            >
+            <input
+              type="text"
+              id="name-form-section"
+              name="name"
+              class="input-form-section"
+              required
+            />
+            <div id="nameError-form-section" class="error-form-section">
+              Please enter a valid name (letters and spaces only)
+            </div>
+          </div>
+          <div class="form-group-form-section">
+            <label for="email-form-section" class="label-form-section"
+              >Email:</label
+            >
+            <input
+              type="text"
+              id="email-form-section"
+              name="email"
+              class="input-form-section"
+              required
+            />
+            <div id="emailError-form-section" class="error-form-section">
+              Email must end with @gmail.com
+            </div>
+          </div>
+
+          <div class="form-group-form-section">
+            <label for="date-form-section" class="label-form-section"
+              >Date:</label
+            >
+            <input
+              type="date"
+              id="date-form-section"
+              name="date"
+              class="input-form-section"
+              required
+            />
+            <div id="dateError-form-section" class="error-form-section">
+              Please select a valid date
+            </div>
+          </div>
+          <div class="form-group-form-section">
+            <label for="description-form-section" class="label-form-section"
+              >Description:</label
+            >
+            <textarea
+              id="description-form-section"
+              name="description"
+              rows="4"
+              class="textarea-form-section"
+              required
+            ></textarea>
+            <div id="descriptionError-form-section" class="error-form-section">
+              Please enter a description
+            </div>
+          </div>
+          <button
+            type="button"
+            id="saveBtn-form-section"
+            class="button-form-section"
+          >
+            SAVE
+          </button>
+          <div
+            id="successMessage-form-section"
+            class="success-message-form-section"
+          >
+            Form submitted successfully! Data saved.
+          </div>
+        </form>
+        <!--Profile Section-->
+        <div class="profile-section">
+          <h2 class="title2">PROFILE</h2>
+          <hr style="border: 1px solid grey; width: 100%" />
+          <p id="profileText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nisl
+            ex. Maecenas magna tortor, vehicula ac malesuada a, posuere quis
+            felis. Vestibulum at imperdiet eros. Aliquam aliquet orci erat. Sed
+            eleifend nunc a ipsum tristique maximus. Phasellus dapibus leo sit
+            amet rutrum porta. Cras eu arcu libero.
+          </p>
+          <div class="profile-actions">
+            <button id="profileEditBtn" class="edit-btn-profile-section">
+              EDIT
+            </button>
+            <button
+              id="profileSaveBtn"
+              class="save-btn-profile-section"
+              style="display: none"
+            >
+              SAVE
+            </button>
+          </div>
+        </div>
+        <!--Work Experience Section-->
+        <div class="work-experience">
+          <h2 class="title2">WORK EXPERIENCE</h2>
+          <hr style="border: 1px solid grey; width: 100%" />
+          <div class="experience-list">
+            <div class="box">
+              <div class="year_company">
+                <h5>2030-Present</h5>
+                <h5>Borcelle Studio</h5>
+              </div>
+              <div class="job_detail">
+                <h4>Marketing Manager & Specialist</h4>
+                <p>
+                  "But I must explain to you how all this mistaken idea of
+                  denouncing pleasure and praising pain was born and I will give
+                  you a complete account of the system, and expound the actual
+                  teachings of the great explorer of the truth, the
+                  master-builder of human happiness.
+                </p>
+              </div>
+              <button class="remove-btn" style="display: none">REMOVE</button>
+            </div>
+            <div class="box">
+              <div class="year_company">
+                <h5>2025-2029</h5>
+                <h5>Fauget Studio</h5>
+              </div>
+              <div class="job_detail">
+                <h4>Marketing Manager & Specialist</h4>
+                <p>
+                  To take a trivial example, which of us ever undertakes
+                  laborious physical exercise, except to obtain some advantage
+                  from it? But who has any right to find fault with a man who
+                  chooses to enjoy a pleasure that has no annoying consequences,
+                  or one who avoids a pain that produces no resultant pleasure?"
+                </p>
+              </div>
+              <button class="remove-btn" style="display: none">REMOVE</button>
+            </div>
+            <div class="box">
+              <div class="year_company">
+                <h5>2024-2025</h5>
+                <h5>Studio Shodwe</h5>
+              </div>
+              <div class="job_detail">
+                <h4>Marketing Manager & Specialist</h4>
+                <p>
+                  "At vero eos et accusamus et iusto odio dignissimos ducimus
+                  qui blanditiis praesentium voluptatum deleniti atque corrupti
+                  quos dolores et quas molestias excepturi sint occaecati
+                  cupiditate non provident, similique sunt in culpa qui officia
+                  deserunt mollitia animi, id est laborum et dolorum fuga. Et
+                  harum quidem rerum facilis est et expedita distinctio. Nam
+                  libero tempore, cum soluta nobis est eligendi optio cumque
+                  nihil impedit quo minus
+                </p>
+              </div>
+              <button class="remove-btn" style="display: none">REMOVE</button>
+            </div>
+          </div>
+          <div class="new-experience-form" style="display: none">
+            <input
+              type="text"
+              placeholder="Years (e.g. 2024-2025)"
+              class="input-years"
+            />
+            <input
+              type="text"
+              placeholder="Company Name"
+              class="input-company"
+            />
+            <input type="text" placeholder="Job Title" class="input-title" />
+            <textarea
+              placeholder="Description"
+              class="input-description"
+            ></textarea>
+            <button class="add-btn">+ Add New Experience</button>
+          </div>
+          <div class="edit-controls">
+            <button class="edit-btn">EDIT</button>
+            <div class="save-cancel" style="display: none">
+              <button class="save-btn">SAVE</button>
+              <button class="cancel-btn">CANCEL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
